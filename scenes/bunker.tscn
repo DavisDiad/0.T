@@ -1,0 +1,126 @@
+[gd_scene load_steps=14 format=3 uid="uid://ds4qql1eevk8p"]
+
+[ext_resource type="Script" uid="uid://bpudbtbstmtcc" path="res://scripts/bunker/bunker.gd" id="1_hk1w7"]
+[ext_resource type="Texture2D" uid="uid://mt1lmm4xgegn" path="res://placeholders/Texturelabs_Soil_123S.jpg" id="2_tyiie"]
+[ext_resource type="PackedScene" uid="uid://wti01peg0yvf" path="res://placeholders/bunker.glb" id="3_6gqei"]
+[ext_resource type="Texture2D" uid="uid://b3rrka5pcqxgw" path="res://placeholders/teste2.png" id="4_hqi4v"]
+[ext_resource type="PackedScene" uid="uid://bt0era5cir5wp" path="res://scenes/UI/UI.tscn" id="5_q0tom"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bl13t"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_iyx0m"]
+sky_material = SubResource("ProceduralSkyMaterial_bl13t")
+
+[sub_resource type="Environment" id="Environment_74lek"]
+background_mode = 2
+sky = SubResource("Sky_iyx0m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_74lek"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5jx5"]
+albedo_texture = ExtResource("2_tyiie")
+uv1_scale = Vector3(-0.02, -0.02, -0.02)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lpvoh"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_74lek"]
+radius = 1.0083008
+height = 7.019287
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5jx5"]
+radius = 1.0493164
+height = 7.213867
+
+[node name="Bunker" type="Node3D"]
+script = ExtResource("1_hk1w7")
+
+[node name="UI" parent="." instance=ExtResource("5_q0tom")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99415475, 0.10796472, 0, -0.10796472, 0.99415475, -0.043898165, 5.906362, 9.069261)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_74lek")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_74lek")
+surface_material_override/0 = SubResource("StandardMaterial3D_j5jx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_lpvoh")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.23047, 1.4532413, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_74lek")
+surface_material_override/0 = SubResource("StandardMaterial3D_j5jx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_lpvoh")
+
+[node name="bunker" parent="." instance=ExtResource("3_6gqei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060348988, 0.5, -5.6721725)
+
+[node name="Character1" type="Node3D" parent="."]
+transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 2.7854857, 3.5525312, -2.181614)
+
+[node name="Sprite3D" type="Sprite3D" parent="Character1"]
+transform = Transform3D(0.9866406, 0, -0.16291273, 0, 1, 0, 0.16291273, 0, 0.9866406, 1.2235854, 0.40939856, -1.0148106)
+billboard = 1
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_hqi4v")
+
+[node name="Area3D" type="Area3D" parent="Character1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2759936, 0.24157715, -0.65901303)
+shape = SubResource("CapsuleShape3D_74lek")
+
+[node name="Character2" type="Node3D" parent="."]
+transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 1.3659406, 3.0577374, -13.688407)
+
+[node name="Sprite3D" type="Sprite3D" parent="Character2"]
+transform = Transform3D(0.98664093, 0, -0.16291276, 0, 1, 0, 0.16291276, 0, 0.98664093, 1.2235851, 1.0068674, -1.0148106)
+billboard = 1
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_hqi4v")
+
+[node name="Area3D" type="Area3D" parent="Character2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1528251, 0.6928711, -0.59539986)
+shape = SubResource("CapsuleShape3D_j5jx5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.25304875, 0.96745354, 0, -0.9674535, 0.25304878, -0.27386665, 13, 0.3481226)
+light_color = Color(0.8151638, 0.6283526, 1, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 15.11
+spot_attenuation = -0.46
+spot_angle = 35.63
+
+[connection signal="show_options" from="." to="UI" method="_on_bunker_show_options"]
+[connection signal="input_event" from="Character1/Area3D" to="." method="_on_character1_input_event"]
+[connection signal="mouse_entered" from="Character1/Area3D" to="." method="_on_character1_mouse_entered"]
+[connection signal="mouse_exited" from="Character1/Area3D" to="." method="_on_character1_mouse_exited"]
+[connection signal="mouse_entered" from="Character2/Area3D" to="." method="_on_character2_mouse_entered"]
+[connection signal="mouse_exited" from="Character2/Area3D" to="." method="_on_character2_mouse_exited"]
