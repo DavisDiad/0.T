@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ds4qql1eevk8p"]
+[gd_scene load_steps=15 format=3 uid="uid://ds4qql1eevk8p"]
 
 [ext_resource type="Script" uid="uid://bpudbtbstmtcc" path="res://scripts/bunker/bunker.gd" id="1_hk1w7"]
 [ext_resource type="Texture2D" uid="uid://mt1lmm4xgegn" path="res://placeholders/Texturelabs_Soil_123S.jpg" id="2_tyiie"]
 [ext_resource type="PackedScene" uid="uid://wti01peg0yvf" path="res://placeholders/bunker.glb" id="3_6gqei"]
 [ext_resource type="Texture2D" uid="uid://b3rrka5pcqxgw" path="res://placeholders/teste2.png" id="4_hqi4v"]
 [ext_resource type="PackedScene" uid="uid://bt0era5cir5wp" path="res://scenes/UI/UI.tscn" id="5_q0tom"]
+[ext_resource type="Texture2D" uid="uid://b84mp20cuaovf" path="res://sprites/Aeiln/Aeiln_sprite2.png" id="5_tyiie"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bl13t"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -78,14 +79,15 @@ shape = SubResource("BoxShape3D_lpvoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060348988, 0.5, -5.6721725)
 
 [node name="Character1" type="Node3D" parent="."]
-transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 2.7854857, 3.5525312, -2.181614)
+transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 2.239367, 3.5525312, -2.1763144)
 
 [node name="Sprite3D" type="Sprite3D" parent="Character1"]
-transform = Transform3D(0.9866406, 0, -0.16291273, 0, 1, 0, 0.16291273, 0, 0.9866406, 1.2235854, 0.40939856, -1.0148106)
+transform = Transform3D(0.9866406, 0, -0.1629127, 0, 1, 0, 0.1629127, 0, 0.9866406, 1.2235854, 0.68713045, -1.0148108)
 billboard = 1
 shaded = true
+no_depth_test = true
 alpha_cut = 1
-texture = ExtResource("4_hqi4v")
+texture = ExtResource("5_tyiie")
 
 [node name="Area3D" type="Area3D" parent="Character1"]
 
