@@ -79,14 +79,14 @@ shape = SubResource("BoxShape3D_lpvoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060348988, 0.5, -5.6721725)
 
 [node name="Character1" type="Node3D" parent="."]
-transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 2.239367, 3.5525312, -2.1763144)
+transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 2.6500554, 3.6704845, -1.9997668)
 
 [node name="Sprite3D" type="Sprite3D" parent="Character1"]
-transform = Transform3D(0.9866406, 0, -0.1629127, 0, 1, 0, 0.1629127, 0, 0.9866406, 1.2235854, 0.68713045, -1.0148108)
+transform = Transform3D(0.9866406, 0, -0.1629127, 0, 1, 0, 0.1629127, 0, 0.9866406, 1.3172338, 0.68713045, -0.83348846)
 billboard = 1
 shaded = true
 no_depth_test = true
-alpha_cut = 1
+alpha_hash_scale = 2.0
 texture = ExtResource("5_tyiie")
 
 [node name="Area3D" type="Area3D" parent="Character1"]
@@ -97,6 +97,7 @@ shape = SubResource("CapsuleShape3D_74lek")
 
 [node name="Character2" type="Node3D" parent="."]
 transform = Transform3D(0.88849705, 0, -0.45888233, 0, 1, 0, 0.45888233, 0, 0.88849705, 1.3659406, 3.0577374, -13.688407)
+visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Character2"]
 transform = Transform3D(0.98664093, 0, -0.16291276, 0, 1, 0, 0.16291276, 0, 0.98664093, 1.2235851, 1.0068674, -1.0148106)
@@ -112,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1528251, 0.6928711, -0.5953
 shape = SubResource("CapsuleShape3D_j5jx5")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.25304875, 0.96745354, 0, -0.9674535, 0.25304878, -0.27386665, 13, 0.3481226)
+transform = Transform3D(1, 0, 0, 0, 0.25304878, 0.96745354, 0, -0.96745354, 0.25304878, -0.27386665, 13, -7.2581167)
 light_color = Color(0.8151638, 0.6283526, 1, 1)
 light_energy = 3.0
 shadow_enabled = true

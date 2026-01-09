@@ -11,7 +11,6 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	print (pollution_meter)
 	if pollution_meter == 100 or pollution_meter > 100:
 		print ("game over")
 

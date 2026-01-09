@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var control_options: Control = $ControlOptions
 @onready var text_ui: TextureRect = $ControlUI/TextUI
 @onready var text: Control = $Text
+@onready var book: Control = $Book
+
 
 @onready var character_1: Node3D = $"../Character1"
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 	control_buttons.visible = false
 	control_options.visible = false
 	text.visible = false
+	book.visible = false
+	
 
 
 func _on_bunker_show_options() -> void:
@@ -27,16 +31,22 @@ func _on_bunker_show_options() -> void:
 	character_1.visible = false
 
 
+func _on_book_button_pressed() -> void:
+	book.visible = true
+
+
 func _on_return_button_pressed() -> void:
-	if portrait.visible == true and text_ui.visible == true and control_buttons.visible == true:
+	if portrait.visible == true and text_ui.visible == true and control_buttons.visible == true and book.visible == false:
 		portrait.visible = false
 		text_ui.visible = false
 		control_buttons.visible = false
 		text.visible = false
 		character_1.visible = true
-	elif portrait.visible == true and control_buttons.visible == false and control_options.visible == true:
+	elif portrait.visible == true and control_buttons.visible == false and control_options.visible == true and book.visible == false:
 		control_buttons.visible = true
 		control_options.visible = false
+	elif book.visible == true:
+		book.visible = false
 
 
 func _on_speak_button_pressed() -> void:
