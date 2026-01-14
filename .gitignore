@@ -14,3 +14,6 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+sprites/sounds/177295__klankbeeld__fence-at-river-with-piezo-130206_02.wav
+sprites/sounds/177295__klankbeeld__fence-at-river-with-piezo-130206_02.flac
+sprites/sounds/177295__klankbeeld__fence-at-river-with-piezo-130206_02.wav.import

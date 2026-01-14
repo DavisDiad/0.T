@@ -14,9 +14,9 @@ func _ready() -> void:
 	
 	call_deferred("_init_pivot")
 
-func _process(_delta: float) -> void:
-	if book.visible == true:
-		_button_enter()
+#func _process(_delta: float) -> void:
+	#if book.visible == true:
+		#_button_enter()
 
 func _init_pivot() -> void:
 	pivot_offset = size/2.0
@@ -25,9 +25,22 @@ func _button_enter() -> void:
 	create_tween().tween_property(self, "scale", hover_scale, 0.1).set_trans(Tween.TRANS_SINE)
 
 func _button_exit() -> void:
-	create_tween().tween_property(self, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_SINE)
+	if book.visible == false:
+		create_tween().tween_property(self, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_SINE)
 
 func _button_pressed() -> void:
 	var button_press_tween: Tween = create_tween()
 	button_press_tween.tween_property(self, "scale", pressed_scale, 0.06).set_trans(Tween.TRANS_SINE)
 	button_press_tween.tween_property(self, "scale", hover_scale, 0.12).set_trans(Tween.TRANS_SINE)
+
+
+func _on_book_visibility_changed() -> void:
+	if book.visible == true:
+		print("começou")
+		var timer: Timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.autostart = false
+		timer.wait_time = 0.5
+		timer.timeout.connect(_button_enter)
+		timer.start()

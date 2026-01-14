@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bt0era5cir5wp"]
+[gd_scene load_steps=52 format=3 uid="uid://bt0era5cir5wp"]
 
 [ext_resource type="Script" uid="uid://5xr0qfhwqmqh" path="res://scripts/UI/UI.gd" id="1_gl4co"]
 [ext_resource type="Texture2D" uid="uid://dwolq5pnh4uhs" path="res://placeholders/UI_final_sketch12.png" id="2_thnqs"]
@@ -18,6 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://c3pvmi4ewtdi7" path="res://placeholders/Aeil_wound2.0.png" id="16_uw5bg"]
 [ext_resource type="Script" uid="uid://cv363fffad35l" path="res://scripts/UI/hands_texture.gd" id="17_jfcp0"]
 [ext_resource type="Texture2D" uid="uid://br40nor5k8my7" path="res://placeholders/hands_hurt.png" id="18_04ait"]
+[ext_resource type="AudioStream" uid="uid://cwjsr150d5500" path="res://sprites/sounds/160052__jorickhoofd__metal-short-tick.wav" id="19_ce6m7"]
+[ext_resource type="AudioStream" uid="uid://cdjv4w52hjxj" path="res://sprites/sounds/789922__cpfcfan10__generic-metallic-click-3.wav" id="20_ce6m7"]
+[ext_resource type="AudioStream" uid="uid://bw5cpm61budqe" path="res://sprites/sounds/394282__seachangeau__lady-scream-echoed2.wav" id="21_ok71f"]
+[ext_resource type="AudioStream" uid="uid://djg2qkhuvcfda" path="res://sprites/sounds/512951__tosha73__alien-is-crawling-003.wav" id="22_ppsko"]
+[ext_resource type="AudioStream" uid="uid://0fv8m3n5nvgs" path="res://sprites/sounds/540077__magnuswaker__meat-slap-1.wav" id="23_ppsko"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_81vvl"]
 shader = ExtResource("11_ob0dx")
@@ -87,6 +92,14 @@ shader_parameter/vignette_opacity = 0.70000003325
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bk2yh"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppsko"]
+atlas = ExtResource("18_04ait")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5wdm"]
+atlas = ExtResource("18_04ait")
+region = Rect2(3840, 0, 1920, 1080)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouxww"]
 atlas = ExtResource("18_04ait")
 region = Rect2(0, 0, 1920, 1080)
@@ -97,6 +110,17 @@ region = Rect2(1920, 0, 1920, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ok71f"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppsko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5wdm")
+}],
+"loop": true,
+"name": &"heal",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ouxww")
@@ -575,17 +599,76 @@ grow_vertical = 2
 mouse_default_cursor_shape = 3
 
 [node name="HurtAnimation" type="AnimatedSprite2D" parent="Hands"]
+visible = false
 z_index = 4
 position = Vector2(400, 300)
 scale = Vector2(0.41666666, 0.5555556)
 sprite_frames = SubResource("SpriteFrames_ok71f")
 animation = &"hurt"
-frame_progress = 0.31619132
+frame_progress = 0.23324908
 
+[node name="UISounds" type="Node" parent="."]
+
+[node name="Hover" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("19_ce6m7")
+bus = &"Hover"
+
+[node name="Click" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("20_ce6m7")
+bus = &"Click"
+
+[node name="Scream" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("21_ok71f")
+bus = &"Scream"
+
+[node name="Healing" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("22_ppsko")
+
+[node name="Healed" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("23_ppsko")
+
+[node name="Heal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Heal"]
+z_index = 10
+layout_mode = 0
+offset_left = 332.0
+offset_top = 292.0
+offset_right = 372.0
+offset_bottom = 332.0
+mouse_default_cursor_shape = 2
+color = Color(1, 1, 1, 0.39215687)
+
+[node name="ColorRect2" type="ColorRect" parent="Heal"]
+z_index = 10
+layout_mode = 0
+offset_left = 450.0
+offset_top = 292.0
+offset_right = 490.0
+offset_bottom = 332.0
+mouse_default_cursor_shape = 2
+color = Color(1, 1, 1, 0.39215687)
+
+[connection signal="mouse_entered" from="ControlUI/BookButton" to="." method="_on_book_button_mouse_entered"]
 [connection signal="pressed" from="ControlUI/BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="pressed" from="ControlUI/ReturnTexture/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="mouse_entered" from="ControlButtons/SpeakTexture/SpeakButton" to="." method="_on_speak_button_mouse_entered"]
 [connection signal="pressed" from="ControlButtons/SpeakTexture/SpeakButton" to="." method="_on_speak_button_pressed"]
+[connection signal="mouse_entered" from="ControlButtons/HurtTexture/HurtButton" to="." method="_on_hurt_button_mouse_entered"]
 [connection signal="pressed" from="ControlButtons/HurtTexture/HurtButton" to="." method="_on_hurt_button_pressed"]
-[connection signal="hidden" from="Book" to="ControlUI/BookButton" method="_on_book_hidden"]
+[connection signal="mouse_entered" from="ControlButtons/HealTexture/HealButton" to="." method="_on_heal_button_mouse_entered"]
+[connection signal="pressed" from="ControlButtons/HealTexture/HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="visibility_changed" from="Book" to="ControlUI/BookButton" method="_on_book_visibility_changed"]
 [connection signal="mouse_entered" from="Hands/Mouse" to="Hands/HandsTexture" method="_on_mouse_mouse_entered"]
 [connection signal="mouse_exited" from="Hands/Mouse" to="Hands/HandsTexture" method="_on_mouse_mouse_exited"]
+[connection signal="mouse_entered" from="Heal/ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="mouse_exited" from="Heal/ColorRect" to="." method="_on_color_rect_mouse_exited"]
+[connection signal="mouse_entered" from="Heal/ColorRect2" to="." method="_on_color_rect_2_mouse_entered"]
+[connection signal="mouse_exited" from="Heal/ColorRect2" to="." method="_on_color_rect_2_mouse_exited"]

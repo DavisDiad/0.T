@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ds4qql1eevk8p"]
+[gd_scene load_steps=24 format=3 uid="uid://ds4qql1eevk8p"]
 
 [ext_resource type="Script" uid="uid://bpudbtbstmtcc" path="res://scripts/bunker/bunker.gd" id="1_hk1w7"]
 [ext_resource type="Texture2D" uid="uid://mt1lmm4xgegn" path="res://placeholders/Texturelabs_Soil_123S.jpg" id="2_tyiie"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bt0era5cir5wp" path="res://scenes/UI/UI.tscn" id="5_q0tom"]
 [ext_resource type="Texture2D" uid="uid://b84mp20cuaovf" path="res://sprites/Aeiln/Aeiln_sprite2.png" id="5_tyiie"]
 [ext_resource type="AudioStream" uid="uid://ccnnbk4jfxs2q" path="res://sprites/sounds/691815__newlocknew__ambdsgn_otherworldly-gloomy-industrial-ambience-2-2_em.wav" id="7_6gqei"]
+[ext_resource type="AudioStream" uid="uid://chhx6kplf8c5s" path="res://sprites/sounds/504641__fission9__underwater-ambience.wav" id="8_hqi4v"]
+[ext_resource type="AudioStream" uid="uid://lxrkohkjh08o" path="res://sprites/sounds/201260__empraetorius__water-bottle-boing.wav" id="9_64vmv"]
+[ext_resource type="AudioStream" uid="uid://bxpja4svj6lo" path="res://sprites/sounds/638923__mfj0__boiling-eggs-rattling-sound.wav" id="10_fge2j"]
+[ext_resource type="AudioStream" uid="uid://ckwm65j4xc5k8" path="res://sprites/sounds/213561__woodylein__computer-noise.wav" id="11_fge2j"]
+[ext_resource type="AudioStream" uid="uid://dub7vjcwqgftx" path="res://sprites/sounds/177295__klankbeeld__fence-at-river-with-piezo-130206_02.wav" id="12_csyls"]
+[ext_resource type="AudioStream" uid="uid://cwjsr150d5500" path="res://sprites/sounds/160052__jorickhoofd__metal-short-tick.wav" id="13_6q7sk"]
+[ext_resource type="AudioStream" uid="uid://cdjv4w52hjxj" path="res://sprites/sounds/789922__cpfcfan10__generic-metallic-click-3.wav" id="14_xm4vo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bl13t"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -132,9 +139,47 @@ spot_range = 15.11
 spot_attenuation = -0.46
 spot_angle = 35.63
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AmbianceSounds" type="Node" parent="."]
+
+[node name="IndustrialAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
 stream = ExtResource("7_6gqei")
 autoplay = true
+bus = &"Metal_Ambience"
+
+[node name="WaterAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("8_hqi4v")
+autoplay = true
+bus = &"Water_Ambience"
+
+[node name="BottleAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("9_64vmv")
+autoplay = true
+bus = &"Bottle_Ambiance"
+
+[node name="EggsAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("10_fge2j")
+autoplay = true
+bus = &"Egg_Ambience"
+
+[node name="Machine" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("11_fge2j")
+autoplay = true
+bus = &"Machine"
+
+[node name="Fence" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("12_csyls")
+autoplay = true
+bus = &"Fence"
+
+[node name="UISounds" type="Node" parent="."]
+
+[node name="Hover" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("13_6q7sk")
+bus = &"Hover"
+
+[node name="Click" type="AudioStreamPlayer" parent="UISounds"]
+stream = ExtResource("14_xm4vo")
+bus = &"Click"
 
 [connection signal="show_options" from="." to="UI" method="_on_bunker_show_options"]
 [connection signal="input_event" from="Character1/Area3D" to="." method="_on_character1_input_event"]

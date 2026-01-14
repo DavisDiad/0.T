@@ -8,8 +8,6 @@ var hands_wound2_state3 = preload("res://placeholders/Aeil_wound2_state3.png")
 
 @onready var hands_texture: TextureRect = $"."
 
-@onready var area_2d: Area2D = $"../../Area2D"
-
 @onready var hurt_animation: AnimatedSprite2D = $"../HurtAnimation"
 
 var hovering = false
@@ -20,8 +18,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if hovering == true and Input.is_action_just_pressed("left_click"):
+		$"../../UISounds/Scream".play()
 		hurt_animation.visible = true
-		hurt_animation.play()
+		hurt_animation.play("hurt")
 		var timer: Timer = Timer.new()
 		add_child(timer)
 		timer.one_shot = true
