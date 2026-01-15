@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var control_options: Control = $ControlOptions
 @onready var text_ui: TextureRect = $ControlUI/TextUI
 @onready var text: Control = $Text
+@onready var rich_text_label: RichTextLabel = $Text/Dialogue_Panel/RichTextLabel
+
 
 @onready var book: Control = $Book
 
@@ -23,11 +25,11 @@ const CURSOR_HURT = preload("uid://uqjdfasne4es")
 @onready var heal: Control = $Heal
 var heal_hover = false
 var completed = false
-var fill_time := 1.0
+var fill_time := 2.0
 var hold_time := 0.0
 var is_hovered := false
 var start_color := Color.WHITE
-var target_color := Color.RED
+var target_color := Color.LIGHT_GREEN
 
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(CURSOR_HURT, Input.CURSOR_CROSS)
@@ -39,6 +41,7 @@ func _ready() -> void:
 	control_options.visible = false
 	
 	text.visible = false
+	rich_text_label.visible = false
 	book.visible = false
 	
 	hands.visible = false
@@ -46,7 +49,8 @@ func _ready() -> void:
 	heal.visible = false
 	heal_hover = false
 	start_color.a8 = 0
-	target_color.a8 = 100
+	
+	#$Heal/TextureRect.modulate = Color.BLUE
 
 func _process(delta: float) -> void:
 	if book.visible == true:
@@ -67,16 +71,13 @@ func _process(delta: float) -> void:
 		$UISounds/Healing.stop()
 	hold_time = clamp(hold_time, 0.0, fill_time)
 	var t := hold_time / fill_time
-	$Heal/ColorRect.color = start_color.lerp(target_color, t)
-	$Heal/ColorRect2.color = start_color.lerp(target_color, t)
+	$Heal/TextureRect.modulate = start_color.lerp(target_color, t)
 	if hold_time >= fill_time:
 		completed = true
-
-func _input(event):
-	if completed == true and not event.is_action_pressed("left_click"):
+	
+	if completed == true:
+		$Heal.visible = false
 		$UISounds/Healed.play()
-		$Heal/ColorRect.visible = false
-		$Heal/ColorRect2.visible = false
 		
 		$Hands/HurtAnimation.visible = true
 		$Hands/HurtAnimation.play("heal")
@@ -94,8 +95,10 @@ func _on_bunker_show_options() -> void:
 	portrait.visible = true
 	text_ui.visible = true
 	control_buttons.visible = true
+	control_options.visible = false
 	text.visible = true
 	character_1.visible = false
+	rich_text_label.visible = true
 
 
 func _on_book_button_pressed() -> void:
@@ -163,20 +166,12 @@ func _on_heal_button_pressed() -> void:
 	$Hands/Mouse.visible = false
 	$Heal.visible = true
 
-func _on_color_rect_mouse_entered() -> void:
+func _on_heal_mouse_mouse_entered() -> void:
 	hover.play()
 	heal_hover = true
 
-func _on_color_rect_mouse_exited() -> void:
+func _on_heal_mouse_mouse_exited() -> void:
 	heal_hover = false
-
-func _on_color_rect_2_mouse_entered() -> void:
-	hover.play()
-	heal_hover = true
-
-func _on_color_rect_2_mouse_exited() -> void:
-	heal_hover = false
-
 
 func _on_book_button_mouse_entered() -> void:
 	hover.play()
@@ -189,3 +184,33 @@ func _on_hurt_button_mouse_entered() -> void:
 
 func _on_heal_button_mouse_entered() -> void:
 	hover.play()
+
+func _on_option_a_button_pressed() -> void:
+	click.play()
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.autostart = false
+	timer.wait_time = 0.1
+	timer.timeout.connect(_timer_Timeout2)
+	timer.start()
+
+func _on_option_a_button_mouse_entered() -> void:
+	hover.play()
+
+func _on_option_b_button_pressed() -> void:
+	click.play()
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.autostart = false
+	timer.wait_time = 0.1
+	timer.timeout.connect(_timer_Timeout2)
+	timer.start()
+
+func _on_option_b_button_mouse_entered() -> void:
+	hover.play()
+
+func _timer_Timeout2():
+	control_options.visible = false
+	control_buttons.visible = true

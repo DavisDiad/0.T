@@ -1,0 +1,596 @@
+{
+    "aeiln_initial_00": {
+        "speaker": "Aeiln",
+        "emotion": "normal",
+        "text": {
+            "pt": "Fita-me com atenção. Pareço-te infectada?",
+            "en": "Look at me closely. Do I seem infected to you?"
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "Pareces demasiado serena.",
+                    "en": "You seem far too calm."
+                },
+                "next": "aeiln_initial_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "Só existe uma forma de saber.",
+                    "en": "The is only one way to find out."
+                },
+                "next": "aeiln_initial_02"
+            }
+        }
+    },
+    "aeiln_initial_01": {
+        "speaker": "Aeiln",
+        "emotion": "angry",
+        "text": {
+            "pt": "Devo temer a lâmina qu empunhas? Ou aquilo que defendes?",
+            "en": "Should I fear the blade you carry, or what you stand for?"
+        },
+        "options": null
+    },
+    "aeiln_initial_02": {
+        "speaker": "Aeiln",
+        "emotion": "normal",
+        "text": {
+            "pt": "É nisso no que verdadeiramente crês? Ou escolheste crer cegamente no que te foi dito?",
+            "en": "Is that what you truly believe? Or have you chosen blind faith in what you were told?"
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_before_healed_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_before_healed_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_before_healed_02"
+            }
+        }
+    },
+    "aeiln_before_healed_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_before_healed_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_healed_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_healed_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_healed_02"
+            }
+        }
+    },
+    "aeiln_healed_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_healed_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_healed_hurted_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_healed_hurted_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_healed_hurted_02"
+            }
+        }
+    },
+    "aeiln_healed_hurted_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_healed_hurted_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_before_hurted_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_before_hurted_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_before_hurted_02"
+            }
+        }
+    },
+    "aeiln_before_hurted_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_before_hurted_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_hurted_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_hurted_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_hurted_02"
+            }
+        }
+    },
+    "aeiln_hurted_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_hurted_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_fully_hurted_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_d01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_02"
+            }
+        }
+    },
+    "aeiln_fully_hurted_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_fully_hurted_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_fully_hurted_state1_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_state1_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_state1_02"
+            }
+        }
+    },
+    "aeiln_fully_hurted_state1_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_fully_hurted_state1_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_fully_hurted_state2_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_state2_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_fully_hurted_state2_02"
+            }
+        }
+    },
+    "aeiln_fully_hurted_state2_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_fully_hurted_state2_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_state1_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state1_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state1_02"
+            }
+        }
+    },
+    "aeiln_state1_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_state1_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_state2_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state2_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state2_02"
+            }
+        }
+    },
+    "aeiln_state2_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_state2_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_state100_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state100_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_state100_02"
+            }
+        }
+    },
+    "aeiln_state100_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_state100_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+
+
+
+
+    "aeiln_kill_00": {
+        "speaker": "",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": {
+            "option1": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_kill_01"
+            },
+            "option2": {
+                "text": {
+                    "pt": "",
+                    "en": ""
+                },
+                "next": "aeiln_kill_02"
+            }
+        }
+    },
+    "aeiln_kill_01": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    },
+    "aeiln_kill_02": {
+        "speaker": "Aeiln",
+        "emotion": "",
+        "text": {
+            "pt": "",
+            "en": ""
+        },
+        "options": null
+    }
+}

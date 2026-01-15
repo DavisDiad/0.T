@@ -17,7 +17,7 @@ func _ready() -> void:
 	hurt_animation.visible = false
 
 func _process(_delta: float) -> void:
-	if hovering == true and Input.is_action_just_pressed("left_click"):
+	if hovering == true and Input.is_action_just_pressed("left_click") and hurt_animation.visible == false:
 		$"../../UISounds/Scream".play()
 		hurt_animation.visible = true
 		hurt_animation.play("hurt")
@@ -33,6 +33,7 @@ func _timer_Timeout():
 	hurt_animation.stop()
 	hurt_animation.visible = false
 	hands_texture.texture = hands_wound1
+	$"../Mouse".visible = false
 
 func _on_mouse_mouse_entered() -> void:
 	hovering = true
