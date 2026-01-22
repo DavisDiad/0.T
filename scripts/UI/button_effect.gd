@@ -1,5 +1,8 @@
 extends Button
 
+signal tween_finished
+
+
 @export var hover_scale: Vector2 = Vector2(1.1, 1.1)
 @export var pressed_scale: Vector2 = Vector2(0.9, 0.9)
 
@@ -24,3 +27,5 @@ func _button_pressed() -> void:
 	var button_press_tween: Tween = create_tween()
 	button_press_tween.tween_property(self, "scale", pressed_scale, 0.06).set_trans(Tween.TRANS_SINE)
 	button_press_tween.tween_property(self, "scale", hover_scale, 0.12).set_trans(Tween.TRANS_SINE)
+	await button_press_tween.finished
+	emit_signal("tween_finished")

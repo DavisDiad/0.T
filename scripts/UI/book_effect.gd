@@ -8,6 +8,8 @@ extends TextureButton
 var stay_big = false
 
 func _ready() -> void:
+	$"../../Book".connect("visibility_changed", _on_book_visibility_changed)
+	
 	mouse_entered.connect(_button_enter)
 	mouse_exited.connect(_button_exit)
 	pressed.connect(_button_pressed)
@@ -36,7 +38,6 @@ func _button_pressed() -> void:
 
 func _on_book_visibility_changed() -> void:
 	if book.visible == true:
-		print("começou")
 		var timer: Timer = Timer.new()
 		add_child(timer)
 		timer.one_shot = true
@@ -44,3 +45,5 @@ func _on_book_visibility_changed() -> void:
 		timer.wait_time = 0.5
 		timer.timeout.connect(_button_enter)
 		timer.start()
+	else:
+		create_tween().tween_property(self, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_SINE)
