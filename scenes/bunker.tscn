@@ -180,10 +180,3 @@ bus = &"Hover"
 [node name="Click" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("14_xm4vo")
 bus = &"Click"
-
-[connection signal="show_options" from="." to="UI" method="_on_bunker_show_options"]
-[connection signal="input_event" from="Character1/Area3D" to="." method="_on_character1_input_event"]
-[connection signal="mouse_entered" from="Character1/Area3D" to="." method="_on_character1_mouse_entered"]
-[connection signal="mouse_exited" from="Character1/Area3D" to="." method="_on_character1_mouse_exited"]
-[connection signal="mouse_entered" from="Character2/Area3D" to="." method="_on_character2_mouse_entered"]
-[connection signal="mouse_exited" from="Character2/Area3D" to="." method="_on_character2_mouse_exited"]
