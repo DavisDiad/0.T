@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bt0era5cir5wp"]
+[gd_scene load_steps=59 format=3 uid="uid://bt0era5cir5wp"]
 
 [ext_resource type="Script" uid="uid://c0qnxogejpjij" path="res://scripts/UI/UIManager.gd" id="1_y5wdm"]
 [ext_resource type="Texture2D" uid="uid://dwolq5pnh4uhs" path="res://placeholders/UI_final_sketch12.png" id="2_thnqs"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://8x7tss7fjg0g" path="res://scripts/MiniGames/HandsHealMiniGame.gd" id="21_bk2yh"]
 [ext_resource type="AudioStream" uid="uid://bw5cpm61budqe" path="res://sprites/sounds/394282__seachangeau__lady-scream-echoed2.wav" id="21_ok71f"]
 [ext_resource type="AudioStream" uid="uid://djg2qkhuvcfda" path="res://sprites/sounds/512951__tosha73__alien-is-crawling-003.wav" id="22_ppsko"]
+[ext_resource type="Texture2D" uid="uid://dvjfp6c4mkemt" path="res://placeholders/hands_heal.png" id="22_suu2r"]
 [ext_resource type="AudioStream" uid="uid://r3bbem7xsdai" path="res://sprites/sounds/179222__mixedupmoviestuff__knife-stab.wav" id="23_ppsko"]
 [ext_resource type="AudioStream" uid="uid://b5urv0h3ct6hl" path="res://sprites/sounds/716382__sadiquecat__metal-paper-click-1.wav" id="26_q7onm"]
 
@@ -659,7 +660,6 @@ sprite_frames = SubResource("SpriteFrames_ok71f")
 animation = &"hurt"
 
 [node name="HandsHeal" type="Control" parent="Hands"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -683,11 +683,24 @@ offset_bottom = 375.0
 mouse_default_cursor_shape = 3
 
 [node name="HealAnimation" type="AnimatedSprite2D" parent="Hands/HandsHeal"]
-z_index = 4
+visible = false
+z_index = 5
 position = Vector2(400, 300)
 scale = Vector2(0.41666666, 0.5555556)
 sprite_frames = SubResource("SpriteFrames_y5wdm")
 animation = &"heal"
+
+[node name="HealedHand" type="TextureRect" parent="Hands/HandsHeal"]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("22_suu2r")
+expand_mode = 1
 
 [node name="UISounds" type="Node" parent="."]
 
