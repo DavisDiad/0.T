@@ -319,6 +319,9 @@ theme_override_font_sizes/normal_font_size = 20
 text = "Look at me closely. Do I seem infected to you?"
 scroll_active = false
 
+[node name="LetterDisplayTimer" type="Timer" parent="Text"]
+one_shot = true
+
 [node name="UIOptions" type="Control" parent="."]
 z_index = 2
 layout_mode = 3
@@ -599,6 +602,7 @@ offset_right = 780.0
 offset_bottom = 443.0
 
 [node name="Hands" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -725,7 +729,3 @@ stream = ExtResource("23_ppsko")
 [node name="Voice" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("26_q7onm")
 bus = &"Voice"
-
-[connection signal="pressed" from="UIButtons/ReturnTexture/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="mouse_entered" from="Hands/HandsHeal/HealMouse" to="." method="_on_heal_mouse_mouse_entered"]
-[connection signal="mouse_exited" from="Hands/HandsHeal/HealMouse" to="." method="_on_heal_mouse_mouse_exited"]

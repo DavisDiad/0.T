@@ -17,7 +17,7 @@
             "option2": {
                 "text": {
                     "pt": "Só existe uma forma de saber.",
-                    "en": "The is only one way to find out."
+                    "en": "There is only one way to find out."
                 },
                 "next": "aeiln_initial_02"
             }
@@ -27,7 +27,7 @@
         "speaker": "Aeiln",
         "emotion": "angry",
         "text": {
-            "pt": "Devo temer a lâmina qu empunhas? Ou aquilo que defendes?",
+            "pt": "Devo temer a lâmina que empunhas? Ou aquilo que defendes?",
             "en": "Should I fear the blade you carry, or what you stand for?"
         },
         "options": null
@@ -46,24 +46,24 @@
 
 
     "aeiln_before_healed_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Julguei que vinhas para me ferir. Que espécie de dispositivo é esse?",
+            "en": "I thought you were here to harm me. What kind of device is that?"
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Não temas. Fica imóvel.",
+                    "en": "You shall not fear. Remain still."
                 },
                 "next": "aeiln_before_healed_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Sentirás pressão ate que se cumpra.",
+                    "en": "You will feel pressure until it is complete."
                 },
                 "next": "aeiln_before_healed_02"
             }
@@ -71,19 +71,19 @@
     },
     "aeiln_before_healed_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Não é a ti que temo, mas ao que devora este mundo a cada instante.",
+            "en": "I do not fear you. I fear what consumes this world at every moment."
         },
         "options": null
     },
     "aeiln_before_healed_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Eu já a sinto. Sem cessar.",
+            "en": "I already feel it. Constantly."
         },
         "options": null
     },
@@ -92,24 +92,24 @@
 
 
     "aeiln_healed_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A única cura que possuias... Desperdiçada. Tentas curar em mim algo que não existe.",
+            "en": "You wasted it. You are trying to heal something in me that is not there."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Um corte preciso revelará.",
+                    "en": "A precise cut will reveal it."
                 },
                 "next": "aeiln_healed_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "A infeção alastra na surdina.",
+                    "en": "The infection spreads unseen."
                 },
                 "next": "aeiln_healed_02"
             }
@@ -117,19 +117,19 @@
     },
     "aeiln_healed_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "O corpo pode corromper-se, mas a alma persiste. Sempre conectada.",
+            "en": "The body may decay, but the soul remains. Always connected."
         },
         "options": null
     },
     "aeiln_healed_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A transformação também ocorre onde o olhar não alcança. Não temas o que não compreendes.",
+            "en": "Transformation also occurs where the eye cannot reach. Do not fear what you do not understand."
         },
         "options": null
     },
@@ -138,24 +138,24 @@
 
 
     "aeiln_healed_hurted_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "As minhas feridas ainda sangram. Isso não é para curar feridas... No entanto, era o único que tinhas, não é verdade?",
+            "en": "My wounds still bleed. That is not usual healing... This was the only one you had, is not that true?"
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Sangrar é bom sinal. É humano.",
+                    "en": "Bleeding is good. It is human."
                 },
                 "next": "aeiln_healed_hurted_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Não é a carne que isso cura.",
+                    "en": "It is not the flesh that it heals."
                 },
                 "next": "aeiln_healed_hurted_02"
             }
@@ -163,19 +163,19 @@
     },
     "aeiln_healed_hurted_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Se algo possui consciência, é humano?",
+            "en": "If something possesses consciousness, is it human?"
         },
         "options": null
     },
     "aeiln_healed_hurted_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Então não careço de cura. Os que carecem são os perdidos.",
+            "en": "Then I have no need of healing. The ones who do are the lost ones."
         },
         "options": null
     },
@@ -184,24 +184,24 @@
 
 
     "aeiln_before_hurted_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Ofereço-te as minhas mãos. Apenas rogo que não hesites. Sê rápido e preciso.",
+            "en": "I offer you my hands. I only ask that you do not hesitate. Be swift and precise."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Não te atormentas?",
+                    "en": "Aren't you afraid?"
                 },
                 "next": "aeiln_before_hurted_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Sabes por que o faço?",
+                    "en": "Do you know why I do this?"
                 },
                 "next": "aeiln_before_hurted_02"
             }
@@ -209,19 +209,19 @@
     },
     "aeiln_before_hurted_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "De ti? Ou da dor? Nada disso me é novo.",
+            "en": "Of you? Or of pain? Nothing is new to me."
         },
         "options": null
     },
     "aeiln_before_hurted_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Tranquiliza-te saber? As respostas que procuras não residem no meu sangue, nem no de outros inocentes. Estão no 0.T.",
+            "en": "Does it soothe you to know? The answers you seek are not in my blood, nor in that of other innocents. They lie within the 0.T."
         },
         "options": null
     },
@@ -230,24 +230,24 @@
 
 
     "aeiln_hurted_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "...",
+            "en": "..."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "O silêncio nada resolve.",
+                    "en": "Silence will not help here"
                 },
                 "next": "aeiln_hurted_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "O metal não te ocultará por muito mais tempo.",
+                    "en": "Metal will not hide you much longer."
                 },
                 "next": "aeiln_hurted_02"
             }
@@ -255,19 +255,19 @@
     },
     "aeiln_hurted_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Lamento se não aconteceu o que esperavas. O meu corpo não segue manuais vulgares.",
+            "en": "I regret if the outcome disappoints you. My body follows no cheap manual."
         },
         "options": null
     },
     "aeiln_hurted_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Não caminho nas sombras. Apenas poucos conseguem ver a luz que Ele traz.",
+            "en": "I do not walk in shadows. Only a few can see the light It brings."
         },
         "options": null
     },
@@ -276,24 +276,24 @@
 
 
     "aeiln_fully_hurted_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Desperdiças tempo precioso apenas para ouvir os meus gritos. O fim aproxima-se",
+            "en": "You waste precious time just to hear my screams. The end draws near."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Apenas se o 0.T não for detido.",
+                    "en": "Just if the 0.T cannot be stopped."
                 },
-                "next": "aeiln_fully_hurted_d01"
+                "next": "aeiln_fully_hurted_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Tu escolhes o teu caminho.",
+                    "en": "You choose your path."
                 },
                 "next": "aeiln_fully_hurted_02"
             }
@@ -301,19 +301,19 @@
     },
     "aeiln_fully_hurted_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "O velho deve sucumbir para que o novo possa nascer.",
+            "en": "The old must yield so the new may be born."
         },
         "options": null
     },
     "aeiln_fully_hurted_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Já o escolhi. E tu? Ainda hesitas?",
+            "en": "I already have. And you? Still uncertain?"
         },
         "options": null
     },
@@ -322,24 +322,24 @@
 
 
     "aeiln_fully_hurted_state1_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "...",
+            "en": "..."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Silêncio não te salvará.",
+                    "en": "Silence will not save you."
                 },
                 "next": "aeiln_fully_hurted_state1_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "A verdade começa a revelar-se",
+                    "en": "The truth is revealing itself."
                 },
                 "next": "aeiln_fully_hurted_state1_02"
             }
@@ -347,19 +347,19 @@
     },
     "aeiln_fully_hurted_state1_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Não sou eu quem necessita de salvação.",
+            "en": "I am not the one in need of salvation."
         },
         "options": null
     },
     "aeiln_fully_hurted_state1_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Não conheces a Verdade. Mas digo-te: desejas conhecê-la?",
+            "en": "You do not know the Truth. But tell me - do you wish to know it?"
         },
         "options": null
     },
@@ -368,24 +368,24 @@
 
 
     "aeiln_fully_hurted_state2_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A luz... começa a emergir das sombras. Permaneces ainda cego?",
+            "en": "The light... it begins to emerge from the shadows. Do you still remain blind?"
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Eu vejo. És uma deles.",
+                    "en": "I see. You are one of them."
                 },
                 "next": "aeiln_fully_hurted_state2_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Tenho ordens. Chegou a hora.",
+                    "en": "I have orders. The time has come."
                 },
                 "next": "aeiln_fully_hurted_state2_02"
             }
@@ -393,19 +393,19 @@
     },
     "aeiln_fully_hurted_state2_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Dizes que vês, mas o teu coração permanece selado.",
+            "en": "You claim to see, yet your heart remains sealed."
         },
         "options": null
     },
     "aeiln_fully_hurted_state2_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "É no fim que o ciclo se quebra e o novo começa. Isto é apenas o início.",
+            "en": "It is at the end that the cycle breaks and the new begins. This is only the beginning."
         },
         "options": null
     },
@@ -414,24 +414,24 @@
 
 
     "aeiln_state1_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Consegues senti-lo? O odor do petróleo a invadir tudo, a cada segundo, a cada fôlego?",
+            "en": "Can you feel it? The scent of petroleum invading the space with every second, every breath?"
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Os infectados destroem o mundo.",
+                    "en": "The infected are killing the world."
                 },
                 "next": "aeiln_state1_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "O meu objectivo ainda não se cumpriu.",
+                    "en": "My objective is not yet fulfilled."
                 },
                 "next": "aeiln_state1_02"
             }
@@ -439,19 +439,19 @@
     },
     "aeiln_state1_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Pode algo morrer duas vezes? Mas pode escolher permanecer morto, em vez de ser transformado por Ele.",
+            "en": "Can something die twice? But it can choose to remain dead, rather than be transformed by It."
         },
         "options": null
     },
     "aeiln_state1_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "E qual seria? Sabes ao menos qual é o teu propósito? Pouco importa. No fim, só a conexão subsistirá.",
+            "en": "And what would it be? Do you even know your purpose? It matters not. In the end, only connection will endure."
         },
         "options": null
     },
@@ -460,24 +460,24 @@
 
 
     "aeiln_state2_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A corrupção bate à porta. Nem oceano, nem metal nos poderão salvar. Decide, agora.",
+            "en": "Corruption knocks at the door. Neither ocean nor metal can save us. Make your choice."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "...",
+                    "en": "..."
                 },
                 "next": "aeiln_state2_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "...",
+                    "en": "..."
                 },
                 "next": "aeiln_state2_02"
             }
@@ -485,19 +485,19 @@
     },
     "aeiln_state2_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Estás perdido, mas conheço o caminho. E posso guiar-te, se assim o permitires.",
+            "en": "You are lost, but I know the path. And I can guide you -if you allow it."
         },
         "options": null
     },
     "aeiln_state2_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A separação foi o princípio da dor e do sofrimento. O 0.T põe fim à separação.",
+            "en": "Separation was the origin of pain and suffering. The 0.T ends separation."
         },
         "options": null
     },
@@ -506,24 +506,24 @@
 
 
     "aeiln_state100_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "O tempo extingui-se. A realidade é consumida pela criação do homem. Chegou a hora de regressar.",
+            "en": "Time has ended. Reality is consumed by mankind's creation. It is time to return."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Não desejo sucumbir.",
+                    "en": "I do not wish to succumb"
                 },
                 "next": "aeiln_state100_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Recuso a perder-me",
+                    "en": "I refuse to lose myself."
                 },
                 "next": "aeiln_state100_02"
             }
@@ -531,19 +531,19 @@
     },
     "aeiln_state100_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "A carne sente, a tecnologia conecta e o oceano cria. O 0.T unifica.",
+            "en": "The flesh feels, technology connects, and the ocean creates. The 0.T unifies."
         },
         "options": null
     },
     "aeiln_state100_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "O 0.T revelou-nos a Verdade. Estás preparado para ouvi-la?",
+            "en": "The 0.T has shown us the Truth. Are you prepared to hear it?"
         },
         "options": null
     },
@@ -552,24 +552,24 @@
 
 
     "aeiln_kill_00": {
-        "speaker": "",
-        "emotion": "",
+        "speaker": "Aeiln",
+        "emotion": "normal",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "O medo do desconhecido corrompe a alma. Quem o aceita, transforma-se.",
+            "en": "Fear of the unknown corrupts the soul. Those who accept it are transformed."
         },
         "options": {
             "option1": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "Não temes a morte?",
+                    "en": "Do you not fear death?"
                 },
                 "next": "aeiln_kill_01"
             },
             "option2": {
                 "text": {
-                    "pt": "",
-                    "en": ""
+                    "pt": "O vírus provoca delírios",
+                    "en": "The virus causes delusions."
                 },
                 "next": "aeiln_kill_02"
             }
@@ -577,19 +577,19 @@
     },
     "aeiln_kill_01": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "angry",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "Não temo a mudança.",
+            "en": "I do not fear change"
         },
         "options": null
     },
     "aeiln_kill_02": {
         "speaker": "Aeiln",
-        "emotion": "",
+        "emotion": "worried",
         "text": {
-            "pt": "",
-            "en": ""
+            "pt": "...",
+            "en": "..."
         },
         "options": null
     }
