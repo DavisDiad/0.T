@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ds4qql1eevk8p"]
+[gd_scene load_steps=27 format=3 uid="uid://ds4qql1eevk8p"]
 
 [ext_resource type="Script" uid="uid://bpudbtbstmtcc" path="res://scripts/bunker/bunker.gd" id="1_hk1w7"]
 [ext_resource type="Texture2D" uid="uid://mt1lmm4xgegn" path="res://placeholders/Texturelabs_Soil_123S.jpg" id="2_tyiie"]
@@ -14,7 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://ckwm65j4xc5k8" path="res://sprites/sounds/213561__woodylein__computer-noise.wav" id="11_fge2j"]
 [ext_resource type="AudioStream" uid="uid://dub7vjcwqgftx" path="res://sprites/sounds/177295__klankbeeld__fence-at-river-with-piezo-130206_02.wav" id="12_csyls"]
 [ext_resource type="AudioStream" uid="uid://cwjsr150d5500" path="res://sprites/sounds/160052__jorickhoofd__metal-short-tick.wav" id="13_6q7sk"]
+[ext_resource type="AudioStream" uid="uid://c8cbxw72gbaqg" path="res://sprites/sounds/530625__zhr__horror-trumpets.wav" id="14_bsw32"]
 [ext_resource type="AudioStream" uid="uid://cdjv4w52hjxj" path="res://sprites/sounds/789922__cpfcfan10__generic-metallic-click-3.wav" id="14_xm4vo"]
+[ext_resource type="AudioStream" uid="uid://bfg4c015nso8i" path="res://sprites/sounds/734450__nolit47__creepy-breathing-ambience.mp3" id="15_sya3q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bl13t"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -181,6 +183,16 @@ autoplay = true
 bus = &"Fence"
 script = ExtResource("8_xm4vo")
 audio_id = "fence"
+
+[node name="Trumpets" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("14_bsw32")
+script = ExtResource("8_xm4vo")
+audio_id = "trumpets"
+
+[node name="Breathing" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("15_sya3q")
+script = ExtResource("8_xm4vo")
+audio_id = "breathing"
 
 [node name="UISounds" type="Node" parent="."]
 

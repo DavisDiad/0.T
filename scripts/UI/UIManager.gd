@@ -44,6 +44,8 @@ func _ready() -> void:
 	
 	$UIButtons/BookButton.connect("pressed", show_book)
 	
+	$UIButtons/MenuButton.connect("pressed", show_menu)
+	
 	
 	$UIOptions/SpeakTexture/SpeakButton.connect("tween_finished", on_speak_pressed)
 	
@@ -84,6 +86,7 @@ func _ready() -> void:
 	$Hands/HandsHurt.visible = false
 	$Hands/HandsHeal.visible = false
 	$RCT.visible = true
+	$Menu.visible = false
 
 func show_dialogue_UI() -> void:
 	$Portraits.visible = true
@@ -96,7 +99,10 @@ func inicial_dialogue():
 
 
 func hide_UI() -> void:
-	if $Book.visible == true:
+	if $Menu.visible == true:
+		$Menu.visible = false
+	
+	elif $Book.visible == true:
 		$Book.visible = false
 	
 	elif $Hands.visible == true:
@@ -124,6 +130,11 @@ func show_book() -> void:
 	else:
 		$Book.visible = false
 
+func show_menu():
+	if $Menu.visible == false:
+		$Menu.visible = true
+	else:
+		$Menu.visible = false
 
 func on_speak_pressed() -> void:
 	PollutionManager.apply_action("speak")
@@ -291,9 +302,9 @@ func show_text_options():
 
 	$DialogueOptions.visible = true
 
-	$DialogueOptions/OptionATexture/OptionAButton.text = current_options["option1"]["text"]["en"]
+	$DialogueOptions/OptionATexture/OptionAButton.text = current_options["option1"]["text"]
 
-	$DialogueOptions/OptionBTexture/OptionBButton.text = current_options["option2"]["text"]["en"]
+	$DialogueOptions/OptionBTexture/OptionBButton.text = current_options["option2"]["text"]
 func on_optionA_pressed():
 	if pollution_state == 3:
 		DialogueManager.show_dialogue(

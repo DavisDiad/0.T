@@ -1,12 +1,15 @@
-[gd_scene load_steps=62 format=3 uid="uid://bt0era5cir5wp"]
+[gd_scene load_steps=71 format=3 uid="uid://bt0era5cir5wp"]
 
 [ext_resource type="Script" uid="uid://c0qnxogejpjij" path="res://scripts/UI/UIManager.gd" id="1_y5wdm"]
-[ext_resource type="Texture2D" uid="uid://dwolq5pnh4uhs" path="res://placeholders/UI_final_sketch12.png" id="2_thnqs"]
+[ext_resource type="Texture2D" uid="uid://cdyu00p17eu73" path="res://placeholders/main_menu_final2.png" id="2_0j04n"]
 [ext_resource type="Texture2D" uid="uid://05bcct6vndyn" path="res://sprites/Aeiln/Aeiln_portrait.png" id="3_81vvl"]
+[ext_resource type="Texture2D" uid="uid://7y6fv8i7ob0o" path="res://placeholders/UI.png" id="3_kd6sr"]
 [ext_resource type="Texture2D" uid="uid://dj7f4kp8yx268" path="res://placeholders/text_UI_single.png" id="4_e6oqk"]
 [ext_resource type="Script" uid="uid://ch5j3wpu4eupg" path="res://scripts/UI/button_effect.gd" id="6_84lt7"]
 [ext_resource type="FontFile" uid="uid://c34p4ajpn1oxs" path="res://sprites/fonts/CrimsonText-Regular.ttf" id="6_wgnrc"]
+[ext_resource type="Texture2D" uid="uid://plu14pisd2xr" path="res://placeholders/menu.png" id="7_0j04n"]
 [ext_resource type="Texture2D" uid="uid://5onk7hflt8se" path="res://placeholders/heart0.png" id="7_e6oqk"]
+[ext_resource type="Texture2D" uid="uid://davl4f4h7epir" path="res://placeholders/menu_hover.png" id="8_0k4ay"]
 [ext_resource type="Script" uid="uid://c5dhb8ju5n5bi" path="res://scripts/UI/texture_button_effect.gd" id="8_2ttv2"]
 [ext_resource type="Texture2D" uid="uid://cjdxkq2wlipjx" path="res://placeholders/heart5.png" id="8_e6oqk"]
 [ext_resource type="Script" uid="uid://cbnteon4o5vot" path="res://scripts/UI/book_effect.gd" id="8_uw5bg"]
@@ -28,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://r3bbem7xsdai" path="res://sprites/sounds/179222__mixedupmoviestuff__knife-stab.wav" id="23_ppsko"]
 [ext_resource type="AudioStream" uid="uid://b5urv0h3ct6hl" path="res://sprites/sounds/716382__sadiquecat__metal-paper-click-1.wav" id="26_q7onm"]
 [ext_resource type="Script" uid="uid://bq632nrrwnoyy" path="res://scripts/Sounds/VoicePlayer.gd" id="28_suu2r"]
-[ext_resource type="PackedScene" uid="uid://c4j7rt8a45r2u" path="res://scenes/MainMenu.tscn" id="29_kd6sr"]
+[ext_resource type="Script" uid="uid://ci8my0hukcbyb" path="res://scripts/UI/PauseMenu.gd" id="31_0k4ay"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_81vvl"]
 shader = ExtResource("11_ob0dx")
@@ -192,6 +195,18 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j04n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4ay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l522v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0408x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbhic"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ug1t3"]
+
 [node name="UI" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_y5wdm")
@@ -213,7 +228,7 @@ mouse_filter = 2
 
 [node name="UIButtons" type="Control" parent="."]
 process_priority = 3
-z_index = 3
+z_index = 7
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -231,7 +246,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_thnqs")
+texture = ExtResource("3_kd6sr")
 expand_mode = 2
 
 [node name="BookButton" type="TextureButton" parent="UIButtons"]
@@ -244,6 +259,21 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_e6oqk")
 texture_hover = ExtResource("8_e6oqk")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_uw5bg")
+
+[node name="MenuButton" type="TextureButton" parent="UIButtons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 484.0
+offset_right = 736.0
+offset_bottom = 563.0
+scale = Vector2(1.04, 1.0799999)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_0j04n")
+texture_hover = ExtResource("8_0k4ay")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("8_uw5bg")
@@ -803,8 +833,142 @@ audio_id = "voice"
 bus = &"Voice"
 script = ExtResource("28_suu2r")
 
-[node name="MainMenu2" parent="." instance=ExtResource("29_kd6sr")]
-visible = false
-offset = Vector2(13.505, 10.81)
-scale = Vector2(0.965, 0.715)
-transform = Transform2D(0.965, 0, 0, 0.715, 13.505, 10.81)
+[node name="Menu" type="Control" parent="."]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.75999993)
+mouse_filter = 2
+script = ExtResource("31_0k4ay")
+
+[node name="Control" type="Control" parent="Menu"]
+z_index = 10
+anchors_preset = 0
+offset_right = 791.0
+offset_bottom = 586.84216
+
+[node name="MenuTexture" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0j04n")
+expand_mode = 1
+
+[node name="MenuPanel" type="Panel" parent="Menu"]
+z_index = 11
+layout_mode = 0
+offset_left = 346.0
+offset_top = 114.0
+offset_right = 458.0
+offset_bottom = 200.0
+scale = Vector2(1, 0.92)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0j04n")
+
+[node name="MenuButton" type="Button" parent="Menu/MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_0odk7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0k4ay")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l522v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0408x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wbhic")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug1t3")
+text = "Menu"
+script = ExtResource("6_84lt7")
+
+[node name="SoundPanel" type="Panel" parent="Menu"]
+z_index = 11
+layout_mode = 0
+offset_left = 346.0
+offset_top = 210.52634
+offset_right = 458.0
+offset_bottom = 296.52634
+scale = Vector2(1, 0.92)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0j04n")
+
+[node name="SoundButton" type="Button" parent="Menu/SoundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_0odk7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0k4ay")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l522v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0408x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wbhic")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug1t3")
+text = "Sound"
+script = ExtResource("6_84lt7")
+
+[node name="EnPanel" type="Panel" parent="Menu"]
+z_index = 11
+layout_mode = 0
+offset_left = 346.0
+offset_top = 306.57898
+offset_right = 458.0
+offset_bottom = 392.57898
+scale = Vector2(1, 0.92)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0j04n")
+
+[node name="EnButton" type="Button" parent="Menu/EnPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_0odk7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0k4ay")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l522v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0408x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wbhic")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug1t3")
+text = "En"
+script = ExtResource("6_84lt7")
+
+[node name="PtPanel4" type="Panel" parent="Menu"]
+z_index = 11
+layout_mode = 0
+offset_left = 346.0
+offset_top = 405.2632
+offset_right = 458.0
+offset_bottom = 491.2632
+scale = Vector2(1, 0.92)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0j04n")
+
+[node name="PtButton" type="Button" parent="Menu/PtPanel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_0odk7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0k4ay")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l522v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0408x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wbhic")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug1t3")
+text = "Pt"
+script = ExtResource("6_84lt7")

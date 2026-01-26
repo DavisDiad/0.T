@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c4j7rt8a45r2u"]
+[gd_scene load_steps=18 format=3 uid="uid://c4j7rt8a45r2u"]
 
 [ext_resource type="Script" uid="uid://o8vxoa5kskde" path="res://scripts/UI/main_menu.gd" id="1_mipys"]
 [ext_resource type="FontFile" uid="uid://eae2td3xhdwf" path="res://sprites/fonts/CrimsonText-Bold.ttf" id="2_0ykhv"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cwjsr150d5500" path="res://sprites/sounds/160052__jorickhoofd__metal-short-tick.wav" id="5_ucygd"]
 [ext_resource type="Script" uid="uid://1uq0ar7p4re7" path="res://scripts/Sounds/StreamPlayer.gd" id="6_mipys"]
 [ext_resource type="AudioStream" uid="uid://cdjv4w52hjxj" path="res://sprites/sounds/789922__cpfcfan10__generic-metallic-click-3.wav" id="7_8a8k8"]
+[ext_resource type="AudioStream" uid="uid://yyc5x2u4cdeg" path="res://sprites/sounds/692012__zhr__horror-music-9.wav" id="11_2nypq"]
 [ext_resource type="AudioStream" uid="uid://lxrkohkjh08o" path="res://sprites/sounds/201260__empraetorius__water-bottle-boing.wav" id="11_hubol"]
 [ext_resource type="AudioStream" uid="uid://bxpja4svj6lo" path="res://sprites/sounds/638923__mfj0__boiling-eggs-rattling-sound.wav" id="12_8vx4p"]
 
@@ -22,12 +23,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucygd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mipys"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a8k8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7la6k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nypq"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_mipys")
@@ -62,7 +57,7 @@ scale = Vector2(1, 0.92)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2wh52")
 
-[node name="Button" type="Button" parent="Control/PlayPanel"]
+[node name="PlayButton" type="Button" parent="Control/PlayPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,103 +74,86 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_mipys")
 text = "Play"
 script = ExtResource("3_ow34m")
 
-[node name="PlayPanel2" type="Panel" parent="Control"]
+[node name="QuitPanel" type="Panel" parent="Control"]
 layout_mode = 0
-offset_left = 115.999985
-offset_top = 336.00003
-offset_right = 227.99998
-offset_bottom = 422.00003
-rotation = -0.036959544
+offset_left = 346.0
+offset_top = 212.0
+offset_right = 458.0
+offset_bottom = 298.0
+scale = Vector2(1, 0.92)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2wh52")
 
-[node name="Button" type="Button" parent="Control/PlayPanel2"]
+[node name="QuitButton" type="Button" parent="Control/QuitPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 227.87962
-offset_top = -19.593002
-offset_right = 227.87964
-offset_bottom = -19.593002
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.034600873
-scale = Vector2(1, 0.9200903)
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ow34m")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_l72w3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_826wr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ucygd")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8a8k8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mipys")
+text = "Quit
+"
+script = ExtResource("3_ow34m")
+
+[node name="EnPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 307.0
+offset_right = 458.0
+offset_bottom = 393.0
+scale = Vector2(1, 0.92)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2wh52")
+
+[node name="EnButton" type="Button" parent="Control/EnPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l72w3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_826wr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mipys")
 text = "En"
 script = ExtResource("3_ow34m")
 
-[node name="PlayPanel3" type="Panel" parent="Control"]
+[node name="PtPanel" type="Panel" parent="Control"]
 layout_mode = 0
-offset_left = 565.00006
-offset_top = 333.00003
-offset_right = 677.00006
-offset_bottom = 419.00003
-rotation = 0.013633188
+offset_left = 346.0
+offset_top = 406.0
+offset_right = 458.0
+offset_bottom = 492.0
+scale = Vector2(1, 0.92)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2wh52")
 
-[node name="Button" type="Button" parent="Control/PlayPanel3"]
+[node name="PtButton" type="Button" parent="Control/PtPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -222.98407
-offset_top = 76.04693
-offset_right = -222.98407
-offset_bottom = 76.04692
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.017570052
-scale = Vector2(1, 0.88015133)
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ow34m")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_l72w3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_826wr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ucygd")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7la6k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mipys")
 text = "Pt"
-script = ExtResource("3_ow34m")
-
-[node name="PlayPanel4" type="Panel" parent="Control"]
-layout_mode = 0
-offset_left = 565.00006
-offset_top = 137.00003
-offset_right = 677.00006
-offset_bottom = 223.00003
-rotation = 0.013633188
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_2wh52")
-
-[node name="Button" type="Button" parent="Control/PlayPanel4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -222.94315
-offset_top = 79.046646
-offset_right = -222.94315
-offset_bottom = 79.046646
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.017511759
-scale = Vector2(1, 0.9204663)
-theme_override_fonts/font = ExtResource("2_0ykhv")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ow34m")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_l72w3")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_826wr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ucygd")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2nypq")
-text = "Quit"
 script = ExtResource("3_ow34m")
 
 [node name="TextureRect3" type="TextureRect" parent="Control"]
@@ -273,5 +251,11 @@ bus = &"Bottle_Ambiance"
 
 [node name="EggsAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
 stream = ExtResource("12_8vx4p")
-autoplay = true
 bus = &"Egg_Ambience"
+
+[node name="Music" type="AudioStreamPlayer" parent="AmbianceSounds"]
+stream = ExtResource("11_2nypq")
+autoplay = true
+bus = &"Metal_Ambience"
+script = ExtResource("6_mipys")
+audio_id = "music"
