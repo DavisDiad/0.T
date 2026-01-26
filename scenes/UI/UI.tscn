@@ -597,7 +597,6 @@ text = "b"
 script = ExtResource("6_84lt7")
 
 [node name="Book" type="Control" parent="."]
-visible = false
 z_index = 4
 layout_mode = 3
 anchors_preset = 15
@@ -834,6 +833,7 @@ bus = &"Voice"
 script = ExtResource("28_suu2r")
 
 [node name="Menu" type="Control" parent="."]
+visible = false
 z_index = 5
 layout_mode = 3
 anchors_preset = 15

@@ -1,0 +1,46 @@
+{
+  "play": {
+    "pt": "Jogar",
+    "en": "Play"
+  },
+  "sound": {
+    "pt": "Som",
+    "en": "Sound"
+  },
+  "return": {
+    "pt": "voltar",
+    "en": "return"
+  },
+  "quit": {
+    "pt": "Sair",
+    "en": "Quit"
+  },
+  "speak": {
+    "pt": "Falar",
+    "en": "Speak"
+  },
+  "hurt": {
+    "pt": "Ferir",
+    "en": "Hurt"
+  },
+  "heal": {
+    "pt": "Curar",
+    "en": "Heal"
+  },
+  "kill": {
+    "pt": "Matar",
+    "en": "Kill"
+  },
+    "infected_one": {
+        "pt": "Os Infectados",
+        "en": "Infected One"
+    },
+    "wires": {
+        "pt": "Fios",
+        "en": "Wires"
+    },
+    "cables": {
+        "pt": "Cabos",
+        "en": "Cables"
+    }
+}

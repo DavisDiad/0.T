@@ -21,6 +21,7 @@ DialogueManager="*res://scripts/Dialogue/DialogueManager.gd"
 PollutionManager="*res://scripts/PollutionManager/PollutionManager.gd"
 SoundsManager="*res://scripts/Sounds/SoundsManager.gd"
 Transition="*res://scenes/transition.tscn"
+TranslationManager="*res://scripts/Translation/TranslationManager.gd"
 
 [display]
 
