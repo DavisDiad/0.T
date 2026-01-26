@@ -275,7 +275,8 @@ func display_letter () -> void:
 			letter_display_timer.start(space_time)
 		_:
 			letter_display_timer.start(letter_time)
-			voice_player.play_letter(char)
+			if SoundsManager.muted == false:
+				voice_player.play_letter(char)
 			
 	$Text/DialoguePanel/RichTextLabel.text += char
 	letter_index += 1

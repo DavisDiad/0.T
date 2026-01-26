@@ -199,7 +199,11 @@ audio_id = "breathing"
 [node name="Hover" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("13_6q7sk")
 bus = &"Hover"
+script = ExtResource("8_xm4vo")
+audio_id = "hover"
 
 [node name="Click" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("14_xm4vo")
 bus = &"Click"
+script = ExtResource("8_xm4vo")
+audio_id = "click"

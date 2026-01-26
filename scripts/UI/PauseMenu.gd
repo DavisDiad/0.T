@@ -22,7 +22,7 @@ func on_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 func on_sound_pressed():
-	pass
+	SoundsManager.toggle_mute()
 
 func on_en_pressed():
 	DialogueManager.game_language("en")

@@ -248,10 +248,14 @@ audio_id = "click"
 stream = ExtResource("11_hubol")
 autoplay = true
 bus = &"Bottle_Ambiance"
+script = ExtResource("6_mipys")
+audio_id = "bottle"
 
 [node name="EggsAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
 stream = ExtResource("12_8vx4p")
 bus = &"Egg_Ambience"
+script = ExtResource("6_mipys")
+audio_id = "eggs"
 
 [node name="Music" type="AudioStreamPlayer" parent="AmbianceSounds"]
 stream = ExtResource("11_2nypq")
