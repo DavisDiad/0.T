@@ -568,7 +568,7 @@
             },
             "option2": {
                 "text": {
-                    "pt": "O vírus provoca delírios",
+                    "pt": "O vírus provoca delírios.",
                     "en": "The virus causes delusions."
                 },
                 "next": "aeiln_kill_02"
@@ -580,7 +580,7 @@
         "emotion": "angry",
         "text": {
             "pt": "Não temo a mudança.",
-            "en": "I do not fear change"
+            "en": "I do not fear change."
         },
         "options": null
     },

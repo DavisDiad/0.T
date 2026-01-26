@@ -1,5 +1,7 @@
 extends Control
 
+signal heal_completed
+
 var hover = false
 
 var completed = false
@@ -24,17 +26,32 @@ func _process(delta: float) -> void:
 		hold_time += delta
 	else:
 		hold_time -= delta
+	
+	if Input.is_action_just_pressed("left_click") and hover and $HealedHand.visible:
+		SoundsManager.play("healing")
+
+
 	hold_time = clamp(hold_time, 0.0, fill_time)
 	var t := hold_time / fill_time
 	$HealedHand.modulate = start_color.lerp(target_color, t)
+	
+	
 	if hold_time >= fill_time:
-		healed()
-func healed() -> void:
-		$HealAnimation.visible = true
-		$HealAnimation.play()
-		await get_tree().create_timer(1.0).timeout
-		$HealAnimation.stop()
+		SoundsManager.stop("healing")
+		SoundsManager.play("healed")
 		hover = false
-		completed = false
-		$HealAnimation.visible = false
-		$HealedHand.visible = false
+		
+		healed()
+
+
+func healed() -> void:
+	$HealAnimation.visible = true
+	$HealAnimation.play()
+	await get_tree().create_timer(1.0).timeout
+	$HealAnimation.stop()
+	hover = false
+	completed = false
+	$HealAnimation.visible = false
+	$HealedHand.visible = false
+	
+	heal_completed.emit()

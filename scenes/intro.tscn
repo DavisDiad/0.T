@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp8byx0a1mxv6"]
+
+[ext_resource type="VideoStream" uid="uid://qmfr8x12d6l4" path="res://placeholders/intro_final.ogv" id="1_ioskq"]
+[ext_resource type="Script" uid="uid://dk5qkjd7867e6" path="res://scripts/UI/intro.gd" id="1_yjqpq"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_yjqpq")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+stream = ExtResource("1_ioskq")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

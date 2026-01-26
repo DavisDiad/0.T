@@ -1,9 +1,8 @@
-[gd_scene load_steps=59 format=3 uid="uid://bt0era5cir5wp"]
+[gd_scene load_steps=62 format=3 uid="uid://bt0era5cir5wp"]
 
 [ext_resource type="Script" uid="uid://c0qnxogejpjij" path="res://scripts/UI/UIManager.gd" id="1_y5wdm"]
 [ext_resource type="Texture2D" uid="uid://dwolq5pnh4uhs" path="res://placeholders/UI_final_sketch12.png" id="2_thnqs"]
 [ext_resource type="Texture2D" uid="uid://05bcct6vndyn" path="res://sprites/Aeiln/Aeiln_portrait.png" id="3_81vvl"]
-[ext_resource type="Script" uid="uid://xo4ah6hci4se" path="res://scripts/UI/ButtonsInteraction.gd" id="3_jxfsc"]
 [ext_resource type="Texture2D" uid="uid://dj7f4kp8yx268" path="res://placeholders/text_UI_single.png" id="4_e6oqk"]
 [ext_resource type="Script" uid="uid://ch5j3wpu4eupg" path="res://scripts/UI/button_effect.gd" id="6_84lt7"]
 [ext_resource type="FontFile" uid="uid://c34p4ajpn1oxs" path="res://sprites/fonts/CrimsonText-Regular.ttf" id="6_wgnrc"]
@@ -16,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dslio5xmabte" path="res://placeholders/book_test3.png" id="11_t1j05"]
 [ext_resource type="Texture2D" uid="uid://cdxewyp2ds2v2" path="res://placeholders/dialogue_option.png" id="13_0odk7"]
 [ext_resource type="FontFile" uid="uid://eae2td3xhdwf" path="res://sprites/fonts/CrimsonText-Bold.ttf" id="14_0odk7"]
-[ext_resource type="Script" uid="uid://cv363fffad35l" path="res://scripts/UI/hands_texture.gd" id="17_jfcp0"]
 [ext_resource type="Texture2D" uid="uid://bmuhv85qmijbo" path="res://placeholders/Aeil_hands.png" id="17_jxfsc"]
 [ext_resource type="Texture2D" uid="uid://br40nor5k8my7" path="res://placeholders/hands_hurt.png" id="18_04ait"]
 [ext_resource type="AudioStream" uid="uid://cwjsr150d5500" path="res://sprites/sounds/160052__jorickhoofd__metal-short-tick.wav" id="19_ce6m7"]
@@ -24,10 +22,13 @@
 [ext_resource type="AudioStream" uid="uid://cdjv4w52hjxj" path="res://sprites/sounds/789922__cpfcfan10__generic-metallic-click-3.wav" id="20_ce6m7"]
 [ext_resource type="Script" uid="uid://8x7tss7fjg0g" path="res://scripts/MiniGames/HandsHealMiniGame.gd" id="21_bk2yh"]
 [ext_resource type="AudioStream" uid="uid://bw5cpm61budqe" path="res://sprites/sounds/394282__seachangeau__lady-scream-echoed2.wav" id="21_ok71f"]
+[ext_resource type="Script" uid="uid://1uq0ar7p4re7" path="res://scripts/Sounds/StreamPlayer.gd" id="22_bk2yh"]
 [ext_resource type="AudioStream" uid="uid://djg2qkhuvcfda" path="res://sprites/sounds/512951__tosha73__alien-is-crawling-003.wav" id="22_ppsko"]
 [ext_resource type="Texture2D" uid="uid://dvjfp6c4mkemt" path="res://placeholders/hands_heal.png" id="22_suu2r"]
 [ext_resource type="AudioStream" uid="uid://r3bbem7xsdai" path="res://sprites/sounds/179222__mixedupmoviestuff__knife-stab.wav" id="23_ppsko"]
 [ext_resource type="AudioStream" uid="uid://b5urv0h3ct6hl" path="res://sprites/sounds/716382__sadiquecat__metal-paper-click-1.wav" id="26_q7onm"]
+[ext_resource type="Script" uid="uid://bq632nrrwnoyy" path="res://scripts/Sounds/VoicePlayer.gd" id="28_suu2r"]
+[ext_resource type="PackedScene" uid="uid://c4j7rt8a45r2u" path="res://scenes/MainMenu.tscn" id="29_kd6sr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_81vvl"]
 shader = ExtResource("11_ob0dx")
@@ -52,6 +53,10 @@ shader_parameter/warp_amount = 1.0000000475
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.70000003325
+
+[sub_resource type="GDScript" id="GDScript_q7onm"]
+script/source = "extends Control
+"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wgnrc"]
 
@@ -99,6 +104,50 @@ shader_parameter/vignette_opacity = 0.70000003325
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bk2yh"]
 
+[sub_resource type="GDScript" id="GDScript_bk2yh"]
+script/source = "extends Node
+
+#var hands = preload(\"res://placeholders/Aeil_hands.png\")
+#var hands_wound1 = preload(\"res://placeholders/Aeil_wound1.png\")
+#var hands_wound2 = preload(\"res://placeholders/Aeil_wound2.0.png\")
+#var hands_wound2_state2 = preload(\"res://placeholders/Aeil_wound2_state2.png\")
+#var hands_wound2_state3 = preload(\"res://placeholders/Aeil_wound2_state3.png\")
+#
+#@onready var hands_texture: TextureRect = $\".\"
+#
+#@onready var hurt_animation: AnimatedSprite2D = $\"../HurtAnimation\"
+#
+#var hovering = false
+#
+#func _ready() -> void:
+	#hands_texture.texture = hands
+	#hurt_animation.visible = false
+#
+#func _process(_delta: float) -> void:
+	#if hovering == true and Input.is_action_just_pressed(\"left_click\") and hurt_animation.visible == false:
+		#$\"../../UISounds/Scream\".play()
+		#hurt_animation.visible = true
+		#hurt_animation.play(\"hurt\")		#var timer: Timer = Timer.new()
+		#add_child(timer)
+		#timer.one_shot = true
+		#timer.autostart = false
+		#timer.wait_time = 1
+		#timer.timeout.connect(_timer_Timeout)
+		#timer.start()
+#
+#func _timer_Timeout():
+	#hurt_animation.stop()
+	#hurt_animation.visible = false
+	#hands_texture.texture = hands_wound1
+	#$\"../Mouse\".visible = false
+#
+#func _on_mouse_mouse_entered() -> void:
+	#hovering = true
+#
+#func _on_mouse_mouse_exited() -> void:
+	#hovering = false
+"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouxww"]
 atlas = ExtResource("18_04ait")
 region = Rect2(0, 0, 1920, 1080)
@@ -144,9 +193,11 @@ animations = [{
 }]
 
 [node name="UI" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_y5wdm")
 
 [node name="RCT" type="ColorRect" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_81vvl")
 anchors_preset = 15
@@ -161,6 +212,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="UIButtons" type="Control" parent="."]
+process_priority = 3
 z_index = 3
 layout_mode = 3
 anchors_preset = 15
@@ -169,7 +221,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("3_jxfsc")
+script = SubResource("GDScript_q7onm")
 
 [node name="UI" type="TextureRect" parent="UIButtons"]
 layout_mode = 1
@@ -229,6 +281,7 @@ text = "return"
 script = ExtResource("6_84lt7")
 
 [node name="Portraits" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,6 +300,7 @@ mouse_filter = 2
 texture = ExtResource("3_81vvl")
 
 [node name="Text" type="Control" parent="."]
+visible = false
 z_index = 3
 layout_mode = 3
 anchors_preset = 15
@@ -316,13 +370,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("6_wgnrc")
 theme_override_font_sizes/normal_font_size = 20
-text = "Look at me closely. Do I seem infected to you?"
+text = "..."
 scroll_active = false
 
 [node name="LetterDisplayTimer" type="Timer" parent="Text"]
 one_shot = true
 
 [node name="UIOptions" type="Control" parent="."]
+visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -622,7 +677,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("17_jxfsc")
 expand_mode = 1
-script = ExtResource("17_jfcp0")
+script = SubResource("GDScript_bk2yh")
 
 [node name="HandsHurt" type="Control" parent="Hands"]
 visible = false
@@ -664,6 +719,7 @@ sprite_frames = SubResource("SpriteFrames_ok71f")
 animation = &"hurt"
 
 [node name="HandsHeal" type="Control" parent="Hands"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -711,21 +767,44 @@ expand_mode = 1
 [node name="Hover" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("19_ce6m7")
 bus = &"Hover"
+script = ExtResource("22_bk2yh")
+audio_id = "hover"
 
 [node name="Click" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("20_ce6m7")
 bus = &"Click"
+script = ExtResource("22_bk2yh")
+audio_id = "click"
 
 [node name="Scream" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("21_ok71f")
 bus = &"Scream"
+script = ExtResource("22_bk2yh")
+audio_id = "scream"
 
 [node name="Healing" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("22_ppsko")
+bus = &"Healing"
+script = ExtResource("22_bk2yh")
+audio_id = "healing"
 
 [node name="Healed" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("23_ppsko")
+script = ExtResource("22_bk2yh")
+audio_id = "healed"
 
 [node name="Voice" type="AudioStreamPlayer" parent="UISounds"]
 stream = ExtResource("26_q7onm")
 bus = &"Voice"
+script = ExtResource("22_bk2yh")
+audio_id = "voice"
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="UISounds"]
+bus = &"Voice"
+script = ExtResource("28_suu2r")
+
+[node name="MainMenu2" parent="." instance=ExtResource("29_kd6sr")]
+visible = false
+offset = Vector2(13.505, 10.81)
+scale = Vector2(0.965, 0.715)
+transform = Transform2D(0.965, 0, 0, 0.715, 13.505, 10.81)
