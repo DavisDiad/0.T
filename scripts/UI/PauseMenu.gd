@@ -45,4 +45,4 @@ func refresh_ui_language():
 	
 	$"../Book/TitlePanel/TitleTextLabel".text = TranslationManager.get_text("infected_one")
 	$"../Book/WiresTextLabel".text = TranslationManager.get_text("wires")
-	$"../Book/CablesTextLabel".text = TranslationManager.get_text("cabless")
+	$"../Book/CablesTextLabel".text = TranslationManager.get_text("cables")

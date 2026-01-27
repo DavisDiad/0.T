@@ -1,7 +1,8 @@
 extends CanvasLayer
 
-signal show_character_on_bunker
 
+
+signal show_character_on_bunker
 
 signal finished_displaying
 
@@ -35,8 +36,14 @@ var pollution_state = 0
 
 var killing = false
 
+var cross_cursor := preload("res://placeholders/cursor_hurt.png")
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(
+		cross_cursor,
+		Input.CURSOR_CROSS
+	)
+	
 	$"..".connect("talking_to_npc", show_dialogue_UI)
 	
 	
@@ -314,6 +321,12 @@ func on_optionA_pressed():
 		)
 		$DialogueOptions.visible = false
 		$UIOptions.visible = false
+		
+		await get_tree().create_timer(5.0).timeout
+		
+		Transition.transition()
+		await Transition.on_transition_finished
+		get_tree().change_scene_to_file("res://scenes/final_cutscene.tscn")
 	
 	elif current_options == null:
 		return
@@ -332,6 +345,12 @@ func on_optionB_pressed():
 	)
 		$DialogueOptions.visible = false
 		$UIOptions.visible = false
+		
+		await get_tree().create_timer(5.0).timeout
+		
+		Transition.transition()
+		await Transition.on_transition_finished
+		get_tree().change_scene_to_file("res://scenes/final_cutscene.tscn")
 	
 	elif current_options == null:
 		return
@@ -348,7 +367,18 @@ func on_kill_pressed():
 		DialogueManager.show_dialogue("aeiln_kill_00", speech_sound)
 		killing = true
 	else:
-		print ("game over")
+		$Portraits/HurtMouse.visible = true
+		$Portraits/AeilHurt.visible = true
+		
+		$Portraits/AeilHurt.play()
+		SoundsManager.play("scream")
+		await get_tree().create_timer(1.5).timeout
+		$Portraits/AeilHurt.stop()
+		$Portraits/AeilHurt.visible = false
+		
+		Transition.transition()
+		await Transition.on_transition_finished
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 
 func on_pollution_state_1():

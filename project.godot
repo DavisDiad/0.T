@@ -27,6 +27,7 @@ TranslationManager="*res://scripts/Translation/TranslationManager.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://d3dtmfg6dkrk7"
 

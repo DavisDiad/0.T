@@ -29,6 +29,8 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("left_click") and hover and $HealedHand.visible:
 		SoundsManager.play("healing")
+	if Input.is_action_just_released("left_click"):
+		SoundsManager.stop("healing")
 
 
 	hold_time = clamp(hold_time, 0.0, fill_time)

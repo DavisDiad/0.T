@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bt0era5cir5wp"]
+[gd_scene load_steps=75 format=3 uid="uid://bt0era5cir5wp"]
 
 [ext_resource type="Script" uid="uid://c0qnxogejpjij" path="res://scripts/UI/UIManager.gd" id="1_y5wdm"]
 [ext_resource type="Texture2D" uid="uid://cdyu00p17eu73" path="res://placeholders/main_menu_final2.png" id="2_0j04n"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dgx8el3xhm0yv" path="res://placeholders/option_button.png" id="10_e6oqk"]
 [ext_resource type="Shader" uid="uid://bgwamcx8ctaw" path="res://shaders/crt_shader.gdshader" id="11_ob0dx"]
 [ext_resource type="Texture2D" uid="uid://dslio5xmabte" path="res://placeholders/book_test3.png" id="11_t1j05"]
+[ext_resource type="Texture2D" uid="uid://3swer8eacai6" path="res://placeholders/aeiln_hurt.png" id="12_l522v"]
 [ext_resource type="Texture2D" uid="uid://cdxewyp2ds2v2" path="res://placeholders/dialogue_option.png" id="13_0odk7"]
 [ext_resource type="FontFile" uid="uid://eae2td3xhdwf" path="res://sprites/fonts/CrimsonText-Bold.ttf" id="14_0odk7"]
 [ext_resource type="Texture2D" uid="uid://bmuhv85qmijbo" path="res://placeholders/Aeil_hands.png" id="17_jxfsc"]
@@ -70,6 +71,28 @@ script/source = "extends Control
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ttv2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6q2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0408x"]
+atlas = ExtResource("12_l522v")
+region = Rect2(0, 0, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbhic"]
+atlas = ExtResource("12_l522v")
+region = Rect2(480, 0, 480, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ug1t3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0408x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbhic")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uw5bg"]
 
@@ -311,7 +334,6 @@ text = "return"
 script = ExtResource("6_84lt7")
 
 [node name="Portraits" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -328,6 +350,27 @@ offset_right = 444.0
 offset_bottom = 545.0
 mouse_filter = 2
 texture = ExtResource("3_81vvl")
+
+[node name="AeilHurt" type="AnimatedSprite2D" parent="Portraits"]
+visible = false
+position = Vector2(204, 304)
+sprite_frames = SubResource("SpriteFrames_ug1t3")
+frame_progress = 0.18677823
+
+[node name="HurtMouse" type="Control" parent="Portraits"]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 53.0
+offset_right = -480.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 3
 
 [node name="Text" type="Control" parent="."]
 visible = false
@@ -597,6 +640,7 @@ text = "b"
 script = ExtResource("6_84lt7")
 
 [node name="Book" type="Control" parent="."]
+visible = false
 z_index = 4
 layout_mode = 3
 anchors_preset = 15

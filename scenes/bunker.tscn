@@ -146,6 +146,7 @@ spot_angle = 35.63
 
 [node name="IndustrialAmbiance" type="AudioStreamPlayer" parent="AmbianceSounds"]
 stream = ExtResource("7_6gqei")
+autoplay = true
 bus = &"Metal_Ambience"
 script = ExtResource("8_xm4vo")
 audio_id = "industrial"
